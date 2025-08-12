@@ -12,4 +12,4 @@ jobs:
     with:
       example_input: 'Sample value'
       dotnet_version: '2.x.x'
-      project_path: '.' #'./src/MyProject'c
+      project_path: '.' #'./src/MyProject'

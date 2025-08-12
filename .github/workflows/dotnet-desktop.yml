@@ -1,0 +1,15 @@
+# Example: .github/workflows/use-dotnet-reusable.yml
+name: DotNet Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  dotnet-build:
+    uses: reddeppa-org/ci-template/.github/workflows/dotnet_core_build_reusable_template.yml@main
+    with:
+      example_input: 'Sample value'
+      dotnet_version: '2.x.x'
+      project_path: '.' #'./src/MyProject'

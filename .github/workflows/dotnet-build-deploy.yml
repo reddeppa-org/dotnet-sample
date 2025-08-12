@@ -8,7 +8,7 @@ on:
 
 jobs:
   dotnet-build:
-    uses: reddeppa-org/ci-template/.github/workflows/dotnet_core_build_reusable_template.yml@main
+    uses: reddeppa-org/ci-template/.github/workflows/dotnet_core_build_reusable_template.yml@master
     with:
       example_input: 'Sample value'
       dotnet_version: '2.x.x'

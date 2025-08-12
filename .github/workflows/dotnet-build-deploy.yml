@@ -5,6 +5,9 @@ on:
   push:
     branches:
       - master
+permissions:
+    security-events: write
+    contents: read
 
 jobs:
   dotnet-build:
@@ -13,3 +16,12 @@ jobs:
       example_input: 'Sample value'
       dotnet_version: '2.x.x'
       project_path: '.' #'./src/MyProject'
+
+  security-gate:
+    needs: dotnet-build
+    uses: reddeppa-org/ci-template/.github/workflows/gate_security.yml@main
+    with:
+      repo_owner: "${{ github.repository_owner }}"
+      repo_name: "${{ github.repository }}"
+    secrets:
+      pat_token: ${{ secrets.PAT_TOKEN }} 
